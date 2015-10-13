@@ -8,7 +8,7 @@ sealed trait Option[+A] {
 
   def getOrElse[B>:A](default: => B): B = this match {
     case Some(a) => a
-    case  => default
+    case None => default
   }
 
   def flatMap[B](f: A => Option[B]): Option[B] = this match {
