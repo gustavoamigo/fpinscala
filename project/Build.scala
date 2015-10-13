@@ -7,6 +7,8 @@ object FPInScalaBuild extends Build {
     resolvers += "Typesafe Repository" at "http://repo.typesafe.com/typesafe/releases/"
   )
 
+  scalacOptions ++= Seq("-Xmax-classfile-name","72")
+
   lazy val root =
     Project(id = "fpinscala",
             base = file("."),
